@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk"><head><meta charset="utf-8"><title>Створити акт</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../css/style.css"></head>
+<body data-root="../" data-page="admin">
+<header id="hdr"></header>
+<div class="wrap"><nav id="nav"></nav><main>
+<h2 class="sec">Створити акт</h2>
+<div class="item">
+<label>Номер акта</label><input id="n" size="12">
+<label>Дата</label><input id="d" type="date">
+<label>Тип</label><select id="t"><option value="rozporyadzhennya">Розпорядження</option><option value="protokolne-rishennya">Протокольне рішення КСО</option></select>
+<label>Статус</label><select id="s"><option value="chynnyi">Чинний</option><option value="vtratyv-chynnist">Втратив чинність</option></select>
+<label>Тематика</label><select id="tp"><option>Життєзабезпечення</option><option>Оборона</option><option>Кадрові питання</option><option>Фінанси</option><option>Інше</option></select>
+<label>Назва акта</label><input id="ti" size="70">
+<label>Текст (вставте з Word)</label>
+<div class="bar"><button data-cmd="bold"><b>B</b></button><button data-cmd="italic"><i>I</i></button><button data-cmd="underline"><u>U</u></button><button data-cmd="justifyLeft">⇤</button><button data-cmd="justifyCenter">≡</button><button data-cmd="justifyFull">☰</button><button data-cmd="insertUnorderedList">•</button><button data-cmd="insertOrderedList">1.</button><button id="htmlBtn" style="width:auto;padding:0 6px">[HTML]</button></div>
+<div id="ed" contenteditable="true"></div>
+<button class="btn" id="make">Сформувати акт</button>
+</div>
+<div id="out" class="item" style="display:none">
+<b>Крок 1.</b> Збережіть файл як <code id="fn"></code> <button class="btn" id="dl">Завантажити файл</button>
+<label>Готовий HTML</label><textarea id="html" readonly></textarea>
+<b>Крок 2.</b> Додайте цей рядок на початок масиву в <code>data/acts.json</code>:
+<textarea id="json" readonly></textarea>
+<b>Крок 3.</b> Завантажте файл у папку <code>acts/</code> репозиторію, збережіть зміни в <code>acts.json</code> і натисніть Commit. Сайт оновиться за кілька секунд.
+</div>
+</main></div>
+<script src="../js/acts.js"></script><script src="../js/editor.js"></script>
+</body></html>
